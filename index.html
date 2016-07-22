@@ -113,7 +113,7 @@
               _.each(_.keys(dauResults), function(date){
                 var dauValue = dauResults[date];
                 var mauValue = mauResults[date];
-                finalOutput["Top 10"][date] = parseInt(dauValue/mauValue).toFixed(2);
+                finalOutput["Top 10"][date] = parseInt(dauValue/mauValue.toFixed(2));
               });
             } else {
               _.each(_.keys(mauResults), function(date){
