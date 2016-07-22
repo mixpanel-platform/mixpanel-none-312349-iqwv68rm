@@ -113,7 +113,7 @@
               _.each(_.keys(dauResults), function(date){
                 var dauValue = dauResults[date];
                 var mauValue = mauResults[date];
-                finalOutput["DAU/MAU"][date] = (((dauValue/mauValue)*100).toFixed(2));
+                finalOutput["DAU/MAU"][date] = parseInt((((dauValue/mauValue)*100).toFixed(2)));
               });
             } else {
               _.each(_.keys(mauResults), function(date){
