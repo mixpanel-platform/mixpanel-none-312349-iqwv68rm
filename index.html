@@ -60,7 +60,8 @@
           // Query for DAU
           var params = $.extend({}, dates, {
               'type': 'unique',
-              'unit': 'day'
+              'unit': 'day',
+              'where': '("Partner" in properties["$Account Type"]) and (defined (properties["$Account Type"]))'
           });
           MP.api.segment(eventName, params).done(function(queryResults) {
             dauOutput = queryResults.values();
@@ -78,7 +79,8 @@
               'type': 'unique',
               'to':  moment(mauEndDate).format('YYYY-MM-DD'),
               'from': moment(mauStartDate).format('YYYY-MM-DD'),
-              'interval': 30
+              'interval': 30,
+              'where': '("Partner" in properties["$Account Type"]) and (defined (properties["$Account Type"]))'
             }));
           };
           
